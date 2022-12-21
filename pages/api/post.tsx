@@ -3,7 +3,7 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 
 
 const prisma = new PrismaClient();
-const { user, isLoading} = useUser();
+const { user} = useUser();
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
@@ -16,12 +16,14 @@ export default async function handler(req, res) {
 }
 
 async function createInquiry(req, res) {
+
   const body = req.body;
+  
   try {
     const newEntry = await prisma.post.create({
       data: {
         user: user.email,
-        body: body.text,
+        text: body.text,
         image: body.image,
         location: body.location,
         avatar: user.picture

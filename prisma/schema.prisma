@@ -14,7 +14,7 @@ datasource db {
 model Post {
     id          Int       @id @default(autoincrement())
     user        String
-    body        String
+    text        String
     image       String
     location    String
     avatar      String
