@@ -57,7 +57,7 @@ const NavigationBar = (props) => {
           <div className="text-sm flex items-center">
             <Link
               className="invisible md:pr-6 text-xs sm:text-base sm:visible"
-              href="/Upload"
+              href="/upload"
             >
               Upload Photo
             </Link>
