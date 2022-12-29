@@ -11,9 +11,7 @@
     "@headlessui/react": "^1.7.7",
     "@prisma/client": "^4.8.0",
     "framer-motion": "^7.10.3",
-    "next": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "^13.1.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
