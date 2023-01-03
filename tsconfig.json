@@ -26,7 +26,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/upload.tsx"  ],
+, "pages/upload.tsx", "pages/api/posts.js"  ],
   "exclude": [
     "node_modules"
   ]
