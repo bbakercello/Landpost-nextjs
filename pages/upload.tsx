@@ -1,5 +1,4 @@
 import { useUser } from "@auth0/nextjs-auth0/client";
-import { setupMaster } from "cluster";
 import { useState } from "react";
 
 const upload = () => {
@@ -20,7 +19,7 @@ const upload = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const body = { name, text, image, location, picture};
+    const body = { name, text, image, location, picture };
     try {
       const response = await fetch("/api/posts", {
         method: "POST",
@@ -50,8 +49,12 @@ const upload = () => {
           method="POST"
           onSubmit={(e) => handleSubmit(e)}
         >
-          <input type="hidden" name="name" onChange={(e) => setName(e.target.value)}
-            value={name}/>
+          <input
+            type="hidden"
+            name="name"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
+          />
           <input
             type="text"
             name="text"
@@ -81,8 +84,12 @@ const upload = () => {
             value={location}
             className="bg-zinc-300 text-gray-200-900 focus:ring-indigo-400 focus:border-indigo-400 border-warm-gray-300 block w-full rounded-md py-3 px-4 shadow-sm"
           />
-          <input type="hidden" name="picture" onChange={(e) => setPicture(e.target.value)}
-            value={picture} />
+          <input
+            type="hidden"
+            name="picture"
+            onChange={(e) => setPicture(e.target.value)}
+            value={picture}
+          />
           <button type="submit">Submit</button>
         </form>
       </>

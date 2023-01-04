@@ -21,10 +21,7 @@ const NavigationBar = (props) => {
             transition={{ duration: 0.5, ease: "easeInOut", repeatDelay: 1 }}
             whileHover={{ y: -5, scale: 1.1 }}
           >
-            <div
-              className="text-slate-600 text-6xl pr-4 pl-4 "
-             
-            >Icon</div>
+            <div className="text-slate-600 text-6xl pr-4 pl-4 ">Icon</div>
           </motion.div>
         </Link>
         {user && (
@@ -42,10 +39,7 @@ const NavigationBar = (props) => {
                 }}
                 whileHover={{ y: -5, scale: 1.1 }}
               >
-                <div
-                  className="text-slate-600 rotate-45  visible sm:invisible"
-                
-                ></div>
+                <div className="text-slate-600 rotate-45  visible sm:invisible"></div>
               </motion.div>
             </Link>
           </div>
