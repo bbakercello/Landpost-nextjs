@@ -1,6 +1,5 @@
 // pages/api/posts.ts
 import { PrismaClient } from '@prisma/client'
-import { useUser } from "@auth0/nextjs-auth0/client";
 const prisma = new PrismaClient();
 
 
