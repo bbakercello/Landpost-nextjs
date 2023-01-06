@@ -46,7 +46,7 @@ const NavigationBar = (props) => {
         )}
       </div>
 
-      <div className="flex items-center">
+      <div className="flex items-center justify-evenly">
         {user && (
           <div className="text-sm flex items-center">
             <Link
