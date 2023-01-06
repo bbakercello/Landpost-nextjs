@@ -1,10 +1,9 @@
 import NavigationBar from "../components/NavigationBar";
 import { PrismaClient } from "@prisma/client";
 import Link from "next/link";
-import { useState } from "react";
 const prisma = new PrismaClient();
 import { GetServerSideProps } from "next";
-
+import { useState } from "react";
 const ITEMS_PER_PAGE = 10;
 
 const IndexPage = ({ feed }) => {
@@ -21,31 +20,42 @@ const IndexPage = ({ feed }) => {
   return (
     <>
       <NavigationBar />
-      {pageItems.map((item) => (
-        <div className="flex items-center p-4 border-b border-gray-200 hover:bg-gray-100">
-          <Link href={{ pathname: `./posts/${item.id}` }}>
-            <img
-              src={item.avatar}
-              alt={item.name}
-              className="w-12 h-12 rounded-full mr-4"
-            />
-          </Link>
-          <div className="text-sm">
-            <p className="text-gray-900 leading-none font-bold">{item.name}</p>
-            <p className="text-gray-600">{item.text}</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {pageItems.map((item) => (
+          <div className="flex m-6 items-center p-4 border-b border-gray-200 hover:bg-gray-100">
+            <Link href={{ pathname: `./posts/${item.id}` }}>
+              <img
+                src={item.avatar}
+                alt={item.name}
+                className="w-12 h-12 rounded-full mr-4"
+              />
+            </Link>
+            <div className="text-sm">
+              <p className="text-gray-900 leading-none font-bold text-xl">
+                {item.name}
+              </p>
+              <p className="text-gray-600">{item.text}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
       {/* Add pagination controls */}
-      <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-        Previous
-      </button>
-      <button
-        onClick={() => setPage(page + 1)}
-        disabled={page === Math.ceil(feed.length / ITEMS_PER_PAGE)}
-      >
-        Next
-      </button>
+      <div className="my-4 flex justify-between">
+        <button
+          onClick={() => setPage(page - 1)}
+          disabled={page === 1}
+          className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300"
+        >
+          Previous
+        </button>
+        <button
+          onClick={() => setPage(page + 1)}
+          disabled={page === Math.ceil(feed.length / ITEMS_PER_PAGE)}
+          className="px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300"
+        >
+          Next
+        </button>
+      </div>
     </>
   );
 };
