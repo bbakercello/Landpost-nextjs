@@ -2,6 +2,11 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import NavigationBar from "../components/NavigationBar";
+
+
+
+
+
 const upload = () => {
   const [text, setText] = useState("");
   const [image, setImage] = useState("");
