@@ -1,5 +1,4 @@
 import { PrismaClient } from "@prisma/client";
-
 const prisma = new PrismaClient();
 
 async function main() {
@@ -14,16 +13,6 @@ async function main() {
         avatar: `https://picsum.photos/200/300?random=${i}`,
         comments: {
           create: [
-            {
-              text: `This is the text for comment ${i}`,
-              description: `This is the description for comment ${i}`,
-              post_id: i,
-            },
-            {
-              text: `This is the text for comment ${i + 1}`,
-              description: `This is the description for comment ${i + 1}`,
-              post_id: i,
-            },
           ],
         },
       },
